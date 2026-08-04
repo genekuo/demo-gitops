@@ -19,4 +19,10 @@ kubectl apply -f setup/04-warehouse.yaml
 kubectl apply -f setup/05-stage-dev.yaml
 kubectl apply -f setup/06-stage-pre-prod.yaml
 kubectl apply -f setup/07-stage-prod.yaml
+kubectl apply -f setup/08-projectconfig.yaml     # auto-promotion for dev
 ```
+
+Apply `08-projectconfig.yaml` last. It turns on auto-promotion for the `dev`
+Stage, and the chapter walks through it only after the manual dev, pre-prod, and
+prod promotions, so that auto-promotion has something to demonstrate. Applying
+it earlier is harmless but skips ahead of the narrative.
