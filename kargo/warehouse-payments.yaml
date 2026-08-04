@@ -7,4 +7,4 @@ spec:
   subscriptions:
     - image:
         repoURL: ghcr.io/kargobook/payments-api
-        semverConstraint: ">=1.0.0"
+        constraint: ">=1.0.0"
