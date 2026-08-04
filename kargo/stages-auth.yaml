@@ -36,7 +36,7 @@ spec:
 apiVersion: kargo.akuity.io/v1alpha1
 kind: Stage
 metadata:
-  name: auth-staging
+  name: auth-pre-prod
   namespace: kargobook-demo
 spec:
   requestedFreight:
@@ -57,13 +57,13 @@ spec:
                 path: ./repo
         - uses: kustomize-set-image
           config:
-            path: ./repo/apps/auth/envs/staging
+            path: ./repo/apps/auth/envs/pre-prod
             images:
               - image: ghcr.io/kargobook/auth-service
         - uses: git-commit
           config:
             path: ./repo
-            message: "promote auth to staging: ${{ freight.image.tag }}"
+            message: "promote auth to pre-prod: ${{ freight.image.tag }}"
         - uses: git-push
           config:
             path: ./repo
@@ -81,7 +81,7 @@ spec:
         name: auth-warehouse
       sources:
         stages:
-          - auth-staging
+          - auth-pre-prod
   promotionTemplate:
     spec:
       steps:

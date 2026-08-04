@@ -6,13 +6,13 @@ spec:
   promotionPolicies:
     - stage: payments-dev
       autoPromotionEnabled: true
-    - stage: payments-staging
+    - stage: payments-pre-prod
       autoPromotionEnabled: true
     - stage: payments-prod
       autoPromotionEnabled: false
     - stage: auth-dev
       autoPromotionEnabled: true
-    - stage: auth-staging
+    - stage: auth-pre-prod
       autoPromotionEnabled: true
     - stage: auth-prod
       autoPromotionEnabled: false

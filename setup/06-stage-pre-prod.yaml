@@ -1,7 +1,7 @@
 apiVersion: kargo.akuity.io/v1alpha1
 kind: Stage
 metadata:
-  name: staging
+  name: pre-prod
   namespace: demo
 spec:
   requestedFreight:
@@ -25,7 +25,7 @@ spec:
             path: ./repo
       - uses: kustomize-set-image
         config:
-          path: ./repo/envs/staging
+          path: ./repo/envs/pre-prod
           images:
           - image: ghcr.io/kargobook/demo-app
             tag: ${{ imageFrom("ghcr.io/kargobook/demo-app").Tag }}
@@ -33,7 +33,7 @@ spec:
         as: commit
         config:
           path: ./repo
-          message: 'Promote to staging: ${{ imageFrom("ghcr.io/kargobook/demo-app").Tag }}'
+          message: 'Promote to pre-prod: ${{ imageFrom("ghcr.io/kargobook/demo-app").Tag }}'
       - uses: git-push
         config:
           path: ./repo
@@ -41,6 +41,6 @@ spec:
       - uses: argocd-update
         config:
           apps:
-          - name: demo-staging
+          - name: demo-pre-prod
             sources:
             - repoURL: ${{ vars.gitRepo }}

@@ -1,17 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: auth-staging
+  name: payments-pre-prod
   namespace: argocd
 spec:
   project: default
   source:
     repoURL: https://github.com/kargobook/demo-gitops.git
     targetRevision: main
-    path: apps/auth/envs/staging
+    path: apps/payments/envs/pre-prod
   destination:
     server: https://kubernetes.default.svc
-    namespace: auth-staging
+    namespace: payments-pre-prod
   syncPolicy:
     automated:
       selfHeal: true

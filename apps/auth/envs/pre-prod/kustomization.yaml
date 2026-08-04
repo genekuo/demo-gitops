@@ -4,7 +4,7 @@ kind: Kustomization
 resources:
   - ../../base
 
-namespace: auth-staging
+namespace: auth-pre-prod
 
 images:
   - name: ghcr.io/kargobook/auth-service

@@ -6,11 +6,11 @@ This repo backs two parts of the book.
 
 ## Chapter 3 — Getting started (the `demo-app` walkthrough)
 
-A single service, `demo-app`, promoted through `dev → staging → prod`. This is the content you fork/clone in chapter 3.
+A single service, `demo-app`, promoted through `dev → pre-prod → prod`. This is the content you fork/clone in chapter 3.
 
 ```
 base/                       # demo-app base manifests
-envs/{dev,staging,prod}/    # per-environment Kustomize overlays (Kargo writes the image tag here)
+envs/{dev,pre-prod,prod}/    # per-environment Kustomize overlays (Kargo writes the image tag here)
 setup/                      # Kargo Project, Warehouse, Stages + the Argo CD Applications
 configure.sh                # helper to point the setup at your fork
 ```
@@ -22,12 +22,12 @@ Kargo's `kustomize-set-image` step writes to `envs/<env>/`, and each Argo CD App
 Two coordinated services demonstrating the multi-service patterns.
 
 ```
-apps/{payments,auth}/base + envs/{dev,staging,prod}/
+apps/{payments,auth}/base + envs/{dev,pre-prod,prod}/
 argocd/                     # one Argo CD Application per service/environment
 kargo/                      # Kargo Project, Warehouses, and Stages for both services
 ```
 
-- **dev** and **staging**: auto-promotion enabled
+- **dev** and **pre-prod**: auto-promotion enabled
 - **prod**: manual promotion required
 
 ## Related repositories
