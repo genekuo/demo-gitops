@@ -10,7 +10,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/kargobook/demo-gitops.git
+    repoURL: https://github.com/genekuo/demo-gitops.git
     targetRevision: main
     path: envs/dev
   destination:
@@ -35,7 +35,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/kargobook/demo-gitops.git
+    repoURL: https://github.com/genekuo/demo-gitops.git
     targetRevision: main
     path: envs/pre-prod
   destination:
@@ -60,7 +60,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/kargobook/demo-gitops.git
+    repoURL: https://github.com/genekuo/demo-gitops.git
     targetRevision: main
     path: envs/prod
   destination:

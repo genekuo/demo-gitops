@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/kargobook/demo-gitops.git
+    repoURL: https://github.com/genekuo-org/demo-gitops.git
     targetRevision: main
     path: apps/payments/envs/prod
   destination:

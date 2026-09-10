@@ -4,5 +4,5 @@ namespace: demo-prod-us-west
 resources:
   - ../../base
 images:
-  - name: ghcr.io/kargobook/demo-app
+  - name: ghcr.io/genekuo-org/demo-app
     newTag: 1.0.0

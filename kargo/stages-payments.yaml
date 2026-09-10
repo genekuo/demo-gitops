@@ -15,7 +15,7 @@ spec:
       steps:
         - uses: git-clone
           config:
-            repoURL: https://github.com/kargobook/demo-gitops.git
+            repoURL: https://github.com/genekuo-org/demo-gitops.git
             checkout:
               - branch: main
                 path: ./repo
@@ -23,7 +23,7 @@ spec:
           config:
             path: ./repo/apps/payments/envs/dev
             images:
-              - image: ghcr.io/kargobook/payments-api
+              - image: ghcr.io/genekuo-org/payments-api
         - uses: git-commit
           config:
             path: ./repo
@@ -51,7 +51,7 @@ spec:
       steps:
         - uses: git-clone
           config:
-            repoURL: https://github.com/kargobook/demo-gitops.git
+            repoURL: https://github.com/genekuo-org/demo-gitops.git
             checkout:
               - branch: main
                 path: ./repo
@@ -59,7 +59,7 @@ spec:
           config:
             path: ./repo/apps/payments/envs/pre-prod
             images:
-              - image: ghcr.io/kargobook/payments-api
+              - image: ghcr.io/genekuo-org/payments-api
         - uses: git-commit
           config:
             path: ./repo
@@ -87,7 +87,7 @@ spec:
       steps:
         - uses: git-clone
           config:
-            repoURL: https://github.com/kargobook/demo-gitops.git
+            repoURL: https://github.com/genekuo-org/demo-gitops.git
             checkout:
               - branch: main
                 path: ./repo
@@ -95,7 +95,7 @@ spec:
           config:
             path: ./repo/apps/payments/envs/prod
             images:
-              - image: ghcr.io/kargobook/payments-api
+              - image: ghcr.io/genekuo-org/payments-api
         - uses: git-commit
           config:
             path: ./repo

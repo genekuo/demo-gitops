@@ -6,5 +6,5 @@ metadata:
 spec:
   subscriptions:
     - image:
-        repoURL: ghcr.io/kargobook/payments-api
+        repoURL: ghcr.io/genekuo-org/payments-api
         constraint: ">=1.0.0"

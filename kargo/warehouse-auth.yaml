@@ -6,5 +6,5 @@ metadata:
 spec:
   subscriptions:
     - image:
-        repoURL: ghcr.io/kargobook/auth-service
+        repoURL: ghcr.io/genekuo-org/auth-service
         constraint: ">=1.0.0"

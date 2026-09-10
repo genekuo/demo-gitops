@@ -14,7 +14,7 @@ spec:
     spec:
       vars:
         - name: gitRepo
-          value: https://github.com/kargobook/demo-gitops.git
+          value: https://github.com/genekuo/demo-gitops.git
       steps:
       - uses: git-clone
         config:
@@ -26,13 +26,13 @@ spec:
         config:
           path: ./repo/envs/dev
           images:
-          - image: ghcr.io/kargobook/demo-app
-            digest: ${{ imageFrom("ghcr.io/kargobook/demo-app").Digest }}
+          - image: ghcr.io/genekuo-org/demo-app
+            digest: ${{ imageFrom("ghcr.io/genekuo-org/demo-app").Digest }}
       - uses: git-commit
         as: commit
         config:
           path: ./repo
-          message: 'Promote to dev: ${{ imageFrom("ghcr.io/kargobook/demo-app").Tag }}'
+          message: 'Promote to dev: ${{ imageFrom("ghcr.io/genekuo-org/demo-app").Tag }}'
       - uses: git-push
         config:
           path: ./repo
